@@ -1,0 +1,31 @@
+Life cycle of a data science project.
+
+1. Data collection
+2. Feature engineering
+   -> Handling missing values(Cont data, Categorical data)
+  
+    => Types of Missing data:
+        1. Missing completely at Random(MCAR)
+            There is absolutely no relationship with data missing and any other values, observed or missing, within in the dataset.
+            Eg: If two colums in a dataframe has more null values , then the first column's missing data has absolutely no relationship
+            with the second column's missing data.
+         2. Missing not at random(MNAR) or Systematic missing values
+             There is some relationshoip present with the data missing and other values, observed or missing within the datset
+         3. Missing at random(MAR)
+             Data is missing because of random factors, like the data from surveys, etc,.
+    => Techniques of Handling the Missing values
+        1. Mean/Median/Mode Replacement - Replacing the missing values by most frequent occurance of a variable. Used when MAR
+            Advantages:
+                *Easy to implement (Robust to outliers)
+                *Faster way to obtain complete dataset
+            Disadvantages:
+                *Change or distortion of original variance
+                *Impacts Correlation
+        2. Random sample Imputation
+        3. Capturing Nan values with a new feature
+        4. End of distribution Imputation
+        5. Arbitrary Imputation
+        6. Frequent Categories Imputation
+               
+               
+       
