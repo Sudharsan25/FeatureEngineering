@@ -13,19 +13,68 @@ Life cycle of a data science project.
              There is some relationshoip present with the data missing and other values, observed or missing within the datset
          3. Missing at random(MAR)
              Data is missing because of random factors, like the data from surveys, etc,.
-    => Techniques of Handling the Missing values
-        1. Mean/Median/Mode Replacement - Replacing the missing values by most frequent occurance of a variable. Used when MAR
-            Advantages:
-                *Easy to implement (Robust to outliers)
-                *Faster way to obtain complete dataset
-            Disadvantages:
-                *Change or distortion of original variance
-                *Impacts Correlation
-        2. Random sample Imputation
-        3. Capturing Nan values with a new feature
-        4. End of distribution Imputation
-        5. Arbitrary Imputation
-        6. Frequent Categories Imputation
+    => Techniques of Handling the Missing values (Numerical features)
+        1. Mean/Median/Mode Replacement - Replacing the missing values by most frequent occurance of a variable. 
+                When? Used when Missing at random (MAR)
+                Advantages:
+                    *Easy to implement (Robust to outliers)
+                    *Faster way to obtain complete dataset
+                Disadvantages:
+                    *Change or distortion of original variance
+                    *Impacts Correlation
+                    
+        2. Random sample Imputation - It consists of taking random observation from the dataset and we use this observation to replace Nan
+                When? Used when data Missing completely at Random(MCAR)
+                Advantages:
+                    *Easy to Implement
+                    *Very Less distortion in variance
+                Disadvantages:
+                    *Randomness won't work always            
+                
+        3. Capturing Nan values with a new feature - Used to create an extra feature to provide importancce to missing values
+                When? Works well when data Missing not at random(MNAR)
+                Advantages:
+                    *Easy to implement
+                    *Captures Importance of Missing values
+                Disadvantages:
+                    *Creates Additional features(more no.of features with nan values)- curse of dimensionality
+                    
+        4. End of distribution Imputation - replace missing data with values that are at the tails of the distribution of the variable
+                When? Used when data Missing not at random(MNAR)
+                Advantages:
+                    *Easy to implement
+                    *Captures the importance of missing values if there is one
+                Disadvantages:
+                    *Distorts the original distribution of the variable
+                    *If no.of NA is big , it will mask true outliers in the distribution
+                    *If no.of NA is small, the replaced values can be considered as outliers and pre processed in a subsquent feature engg
+                    
+        5. Arbitrary Imputation - replacing all occurrences of missing values (NA) within a variable with an arbitrary value
+                Arbitrary values
+                    =>Should not be more frequently present
+                Advantages:
+                    *Easy to Implement
+                    *Captures importance of missing values
+                Disadvantages:
+                    *Distorts the original distribution of the variable
+                    *Hard to decide which value to use(arbitrary)
+    =>Techniques to handle missing values (Categorical features)
+        1. Frequent category imputation - Replacing the nan values with the most frequent category
+                Advantages:
+                    *Easy to Implement
+                    *Faster Way to Implement 
+                Disadvantages:
+                    *Since wee are using most frequent labels it may use them in an over represented way , if the nan values are more
+                    *It distorts the relation of the most frequent label
+        2. Adding new feature to capture Nan - Craeting a new variable to represent the presence of nan values (1 if nan and 0 if not nan)
+                Advantages:
+                    *Easy to implement
+                    *Captures the importance of missing values
+                Disadvantages:
+                    *Increases the no.of columns if more features have Nan values
+        3. If more Frequent Categories, Replace nan with a New category
+                
+        
                
                
        
