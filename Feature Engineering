@@ -74,7 +74,17 @@ Life cycle of a data science project.
                     *Increases the no.of columns if more features have Nan values
         3. If more Frequent Categories, Replace nan with a New category
                 
-        
-               
+   ->Handling Categorical Features     
+       1. One hot encoding - categorical variables are converted into a form that could be provided to ML algorithms
+               Advantages:
+                   *Easy to implement
+                   *Model applicable form
+               Disadvantages:
+                   *More no.of categories , more no.of columns is created
+       2. One hot encoding for many categories - Instead of all categories, top 10 most frequent categories are one hot encoded
+       
+       3. Ordinal number encoding - Assinging a rank for the category depending on the importance or order of category
+       
+       4. Count or Frequency encoding - Replace the categories by the count of the observations that show that category in the dataset
                
        
