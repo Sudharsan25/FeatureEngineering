@@ -86,5 +86,21 @@ Life cycle of a data science project.
        3. Ordinal number encoding - Assinging a rank for the category depending on the importance or order of category
        
        4. Count or Frequency encoding - Replace the categories by the count of the observations that show that category in the dataset
+               Advantages:
+                   *Easy to use
+                   *Not Increasing any feature space
+               Disadvantages:
+                   *It will provide the same weight if two categories have same frequency
+       5. Target Guided Ordinal Encoding -  we calculate the mean of each categorical variable based on the output and then rank them from highest mean to lowest.
                
-       
+       6. Mean Encoding - Replace the category by it's mean
+               Advantages:
+                   *Straightforward to implement.
+                   *Does not expand the feature space.
+                   *Creates a monotonic relationship between categories and the target.
+               Limitations of Mean encoding
+                   *May lead to overfitting.
+                   *May lead to a possible loss of value if two categories have the same mean as the target—in these cases, the same number replaces the original.
+       7. Probability Ratio Encoding - for each category, we calculate the mean of the target = 1, which is the probability of the target being 1 (P(1)), and the probability of the target being 0 (P(0)).Finally, we calculate the ratio = P(1)/P(0), and we replace the categories by that ratio.
+
+
