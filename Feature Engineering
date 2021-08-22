@@ -100,28 +100,29 @@ Life cycle of a data science project.
                    *Creates a monotonic relationship between categories and the target.
                Limitations of Mean encoding
                    *May lead to overfitting.
-                   *May lead to a possible loss of value if two categories have the same mean as the target—in these cases, the same number replaces the original.
-       7. Probability Ratio Encoding - for each category, we calculate the mean of the target = 1, which is the probability of the target being 1 (P(1)), and the probability of the target being 0 (P(0)).Finally, we calculate the ratio = P(1)/P(0), and we replace the categories by that ratio.
+                   *May lead to a possible loss of value if two categories have the same mean as the target—in these cases, the same number                         replaces the original.
+       7. Probability Ratio Encoding - for each category, we calculate the mean of the target = 1, which is the probability of the target being           1 (P(1)), and the probability of the target being 0 (P(0)).Finally, we calculate the ratio = P(1)/P(0), and we replace the categories           by that ratio.
    
    ->Feature Scaling or Transformation Techniques
+   
        Why is transformation of features required?
            For some algorithms like Knn and K nearest neighbours the difference between the values of features matters.
            Scaling them down in a particular range will help us solve those algorithms easily.
        
        1. Standardization and Normalization:
        
-           => Standardization- the process of rescaling one or more attributes so that they have a mean value of 0 and a standard deviation of 1.In simple terms , it involes centering the variable at 0.
-           It is done using Standardscaler from sklearn library
-           Formula - z= (x-x_mean)/std
+           => Standardization- the process of rescaling one or more attributes so that they have a mean value of 0 and a standard deviation of                 1.In simple terms , it involes centering the variable at 0.
+              It is done using Standardscaler from sklearn library
+              Formula - z= (x-x_mean)/std
             
-           => Normalization- to change the values of numeric columns in the dataset to a common scale, without distorting differences in the ranges of values
+           => Normalization- to change the values of numeric columns in the dataset to a common scale, without distorting differences in the                   ranges of values
        
        2. Scaling to minimum and maximum - rescaling the range of features to scale the range in [0, 1] or [−1, 1].
-           Used frequently with CNN - Deep learning techniques
-           Formula - X_scaled = (X - X.min/ (X.max - X.min))
+            Used frequently with CNN - Deep learning techniques
+            Formula - X_scaled = (X - X.min/ (X.max - X.min))
        
-       3. Robust Scaling - Used to scale the values to median and quantiles. Scaling using medians and quantiles consists of subtracting the median to all observations and then dividing by interquantile difference.
-           Formula - (X - X.median) / IQR , where IQR = 75th Quantile - 25th Quantile 
+       3. Robust Scaling - Used to scale the values to median and quantiles. Scaling using medians and quantiles consists of subtracting the               median to all observations and then dividing by interquantile difference.
+          Formula - (X - X.median) / IQR , where IQR = 75th Quantile - 25th Quantile 
        
        4. Gaussian Transformation:
            These Gaussian transformations are used to convert other types of distribution into normal distribution
@@ -132,5 +133,8 @@ Life cycle of a data science project.
            *Box Coz Transformation:
                The Box-Cox transformation is defined as:
                     T(Y)=(Y exp(λ)−1)/λ
-                    where Y is the response variable and λ is the transformation parameter. λ varies from -5 to 5. In the transformation, all values of λ are considered and the optimal value for a given variable is selected.
-    
+                    where Y is the response variable and λ is the transformation parameter. λ varies from -5 to 5. In the transformation, all                       values of λ are considered and the optimal value for a given variable is selected.
+   
+   ->Handling Imbalanced Dataset
+       1. Under Sampling -  a technique to balance uneven datasets by keeping all of the data in the minority class and decreasing the size of             the majority class
+   
